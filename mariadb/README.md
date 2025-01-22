@@ -9,22 +9,25 @@ Then clone this examples repository and `cd` into this directory, and invoke:
 kraft cloud deploy --metro fra0 -p 3306:3306/tls -M 1024 .
 ```
 
-Get the results of the deployment by first forwarding the port (save the returned PID):
+Get the results of the deployment by first forwarding the port:
 
 ```console
-socat tcp-listen:3306,bind=127.0.0.1,fork,reuseaddr openssl:<NAME>.<METRO>.kraft.host:3306 &
+kraft cloud tunnel <instance_name>:3306
 ```
 
-Then, run the following command to test that it works:
+where `<instance_name>` is the name of the instance returned by the `kraft cloud deploy` command, typically `mariadb-<some_random_string_here>`.
+
+Then, on another console, run a MariaDB client.
+You can use either the `mysql` client:
 
 ```console
-mysql -h 127.0.0.1 -u root -punikraft mysql <<< "select count(*) from user"
+mysql -h 127.0.0.1 --ssl-mode=DISABLED -u root -punikraft mysql <<< "select count(*) from user"
 ```
 
-To stop the `socat` process, run:
+Or you can use the `mariadb` client:
 
 ```console
-kill -9 <PID>
+mariadb -h 127.0.0.1 --ssl=OFF -u root -punikraft mysql <<< "select count(*) from user"
 ```
 
 ## Learn more
