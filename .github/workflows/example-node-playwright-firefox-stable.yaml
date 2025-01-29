@@ -63,7 +63,8 @@ jobs:
           kraft cloud vm start -w 60s node-playwright-firefox-${GITHUB_RUN_ID};
           sleep 5;
 
-          curl -Lv --fail-with-body --max-time 10 "https://node-playwright-firefox-${GITHUB_RUN_ID}.${UKC_METRO}.kraft.host/?page=https://google.com"
+          curl -Lv --fail-with-body --max-time 10 --output screenshot.png "https://node-playwright-firefox-${GITHUB_RUN_ID}.${UKC_METRO}.kraft.host/?page=https://google.com"
+          file screenshot.png | grep -q PNG
 
     - name: Cleanup
       uses: unikraft/kraftkit@staging
