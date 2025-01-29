@@ -48,6 +48,9 @@ jobs:
         run: |
           set -xe;
 
+          sudo apt-get -y update;
+          sudo apt-get install -y --no-install-recommends file grep;
+
           cd node-playwright-firefox;
 
           kraft cloud deploy \
