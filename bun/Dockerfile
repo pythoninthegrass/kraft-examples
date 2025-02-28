@@ -16,8 +16,6 @@ RUN set -xe; \
     ln -sf /usr/share/zoneinfo/Etc/UTC /target/etc/localtime; \
     echo "Etc/UTC" > /target/etc/timezone;
 
-RUN ldd /usr/bin/bun
-
 FROM scratch
 
 COPY --from=bun /self /proc/self
