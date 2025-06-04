@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	_ "github.com/marcboeker/go-duckdb"
+	_ "github.com/marcboeker/go-duckdb/v2"
 )
 
 func main() {
@@ -24,7 +24,7 @@ func main() {
 
 	// Serve the print on port 8080 as a http server
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(w, "id: %d, name: %s", id, name)
+		fmt.Fprintf(w, "id: %d, name: %s\n", id, name)
 	})
 	http.ListenAndServe(":8080", nil)
 }
