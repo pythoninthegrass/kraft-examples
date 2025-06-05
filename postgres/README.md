@@ -50,11 +50,6 @@ Then start the PostgreSQL instance and mount that volume:
 kraft cloud deploy --metro fra0 -M 1024 -e POSTGRES_PASSWORD=unikraft -e PGDATA=/volume/postgres -v postgres:/volume -p 5432:5432/tls .
 ```
 
-## Connecting Other Instances to PostgreSQL
-
-It's likely you would want to connect a frontend application (such as a website) to a PostgreSQL instance.
-See an example on that in the [FerretDB documentation](../ferretdb/README.md).
-
 ## Learn more
 
 - [PostgreSQL's Documentation](https://www.postgresql.org/docs/)
