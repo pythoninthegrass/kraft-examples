@@ -19,7 +19,7 @@ on:
     - '!node21-nextjs/README.md'
 
   schedule:
-  - cron: '0 14 * * 1-5' # Every work day at 2PM
+  - cron: '15 16 * * 1-5'
 
 # Automatically cancel in-progress actions on the same branch
 concurrency:
