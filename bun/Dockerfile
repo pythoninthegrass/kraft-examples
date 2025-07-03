@@ -1,11 +1,9 @@
-FROM oven/bun:1 AS bun
+FROM oven/bun:alpine AS bun
 
 RUN set -xe; \
     mv /usr/local/bin/bun /usr/bin/bun; \
     mkdir /self; \
     ln -sfn /usr/bin/bun /self/exe
-
-FROM alpine:3 AS sys
 
 RUN set -xe; \
     mkdir -p /target/etc; \
@@ -23,16 +21,15 @@ FROM scratch
 COPY --from=bun /self /proc/self
 COPY --from=bun /usr/bin/bun /usr/bin/bun
 
-COPY --from=bun /lib/x86_64-linux-gnu/libc.so.6 /lib/x86_64-linux-gnu/libc.so.6
-COPY --from=bun /lib/x86_64-linux-gnu/libdl.so.2 /lib/x86_64-linux-gnu/libdl.so.2
-COPY --from=bun /lib/x86_64-linux-gnu/libm.so.6 /lib/x86_64-linux-gnu/libm.so.6
-COPY --from=bun /lib/x86_64-linux-gnu/libpthread.so.0 /lib/x86_64-linux-gnu/libpthread.so.0
-COPY --from=bun /lib64/ld-linux-x86-64.so.2 /lib64/ld-linux-x86-64.so.2
+COPY --from=bun /lib/ld-musl-x86_64.so.1 /lib/ld-musl-x86_64.so.1 
+COPY --from=bun /usr/lib/libstdc++.so.6 /usr/lib/libstdc++.so.6
+COPY --from=bun /lib/ld-musl-x86_64.so.1 /lib/ld-musl-x86_64.so.1
+COPY --from=bun /usr/lib/libgcc_s.so.1 /usr/lib/libgcc_s.so.1
 
-COPY --from=sys /target/etc /etc
-COPY --from=sys /usr/share/zoneinfo/UTC /usr/share/zoneinfo/UTC
-COPY --from=sys /usr/share/zoneinfo/Etc/UTC /usr/share/zoneinfo/Etc/UTC
-COPY --from=sys /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
-COPY --from=sys /blank /tmp
+COPY --from=bun /target/etc /etc
+COPY --from=bun /usr/share/zoneinfo/UTC /usr/share/zoneinfo/UTC
+COPY --from=bun /usr/share/zoneinfo/Etc/UTC /usr/share/zoneinfo/Etc/UTC
+COPY --from=bun /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+COPY --from=bun /blank /tmp
 
 COPY ./server.ts /usr/src/server.ts
