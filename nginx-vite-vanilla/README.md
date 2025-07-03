@@ -4,7 +4,7 @@ This example demonstrates how to run a [Vite](https://vite.dev) project which
 has been built for production on [Unikraft Cloud](https://unikraft.cloud).  The
 deployment does not perform any server side rendering (non-SSR) and instead
 serves the resulting artifacts statically (via `npm run build`) using
-[`nginx`](../nginx). T o use Vite in SSR mode or via the `dev` subcommand on a
+[`nginx`](../nginx). To use Vite in SSR mode or via the `dev` subcommand on a
 NodeJS runtime, please see the [`node-vite-vanilla`](../node-vite-vanilla)
 sibling project.
 

@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises'
 import express from 'express'
+import rateLimit from 'express-rate-limit'
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
@@ -13,6 +14,20 @@ const templateHtml = isProduction
 
 // Create http server
 const app = express()
+
+// Rate limiting middlewares
+app.set('trust proxy', 1)
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+  message: "Too many requests, please try again later.",
+  validate: {
+    trustProxy: false, // This should not be used in production !! (check out https://express-rate-limit.mintlify.app/guides/troubleshooting-proxy-issues)
+  },
+});
+app.use(limiter)
 
 // Add Vite or respective production middlewares
 /** @type {import('vite').ViteDevServer | undefined} */
@@ -73,7 +88,7 @@ app.use('*all', async (req, res) => {
   } catch (e) {
     vite?.ssrFixStacktrace(e)
     console.log(e.stack)
-    res.status(500).end(e.stack)
+    res.status(500).end('An internal server error occurred.')
   }
 })
 
