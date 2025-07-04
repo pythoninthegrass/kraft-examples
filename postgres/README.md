@@ -9,30 +9,17 @@ Then clone this examples repository and `cd` into this directory, and invoke:
 kraft cloud deploy --metro fra0 -M 1024 -e POSTGRES_PASSWORD=unikraft -p 5432:5432/tls .
 ```
 
-After deploying, you can query the service using the provided URL.
-For that, first use `socat` to open a TLS connection (save the returned PID):
+Now you can query PostgreSQL using [`psql`](https://www.postgresql.org/docs/current/app-psql.html).
+For that, use the following `psql` command:
 
 ```console
-socat tcp-listen:5432,bind=127.0.0.1,fork,reuseaddr openssl:<NAME>.<METRO>.kraft.host:5432 &
+psql "postgresql://postgres:unikraft@<NAME>.<METRO>.kraft.host:5432/postgres?sslmode=require"
 ```
 
 where `<NAME>.<METRO>.kraft.host` is the name of the instance created above.
 
-Now you can query PostgreSQL using [`psql`](https://www.postgresql.org/docs/current/app-psql.html).
-We assume the username is `postgres` and the password is `unikraft`:
-
-```console
-psql -U postgres -h localhost
-```
-
-Use the `unikraft` password at the password prompt.
 Use SQL and `psql` commands for your work.
-
-To stop the `socat` process, run:
-
-```console
-kill -9 <PID>
-```
+To stop the `psql` process, simply exit the command line interface.
 
 ## Using Volumes
 
