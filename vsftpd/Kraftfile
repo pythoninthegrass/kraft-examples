@@ -1,0 +1,9 @@
+spec: v0.6
+
+name: vsftpd
+
+runtime: base-compat:latest
+
+rootfs: ./Dockerfile
+
+cmd: [ "/wrapper.sh" ]
