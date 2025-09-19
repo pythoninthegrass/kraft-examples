@@ -52,7 +52,7 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 256 \
+            --memory 384 \
             --name node21-solidstart-staging-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/node:21 \
             --subdomain node21-solidstart-staging-${GITHUB_RUN_ID} \
@@ -89,7 +89,7 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 256 \
+            --memory 384 \
             --name node21-solidstart-staging-${GITHUB_RUN_ID}-dbg \
             --runtime index.unikraft.io/official-staging/node:21-dbg \
             --subdomain node21-solidstart-staging-${GITHUB_RUN_ID}-dbg \

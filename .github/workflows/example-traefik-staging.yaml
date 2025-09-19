@@ -52,7 +52,7 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 512 \
+            --memory 768 \
             --name traefik-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/traefik:2.10 \
             --subdomain traefik-${GITHUB_RUN_ID} \
@@ -89,7 +89,7 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 512 \
+            --memory 768 \
             --name traefik-${GITHUB_RUN_ID}-dbg \
             --runtime index.unikraft.io/official-staging/traefik:2.10-dbg \
             --subdomain traefik-${GITHUB_RUN_ID}-dbg \
