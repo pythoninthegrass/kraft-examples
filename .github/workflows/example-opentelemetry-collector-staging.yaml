@@ -52,7 +52,7 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 1024 \
+            --memory 1536 \
             --name opentelemetry-collector-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/opentelemetry-collector:0.95.0 \
             --subdomain opentelemetry-collector-${GITHUB_RUN_ID} \
@@ -89,7 +89,7 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 1024 \
+            --memory 1536 \
             --name opentelemetry-collector-${GITHUB_RUN_ID}-dbg \
             --runtime index.unikraft.io/official-staging/opentelemetry-collector:0.95.0-dbg \
             --subdomain opentelemetry-collector-${GITHUB_RUN_ID}-dbg \
