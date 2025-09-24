@@ -1,0 +1,9 @@
+spec: v0.6
+
+name: wordpress-nginx
+
+runtime: base-compat:latest
+
+rootfs: ./Dockerfile
+
+cmd: [ "/wrapper.sh" ]
