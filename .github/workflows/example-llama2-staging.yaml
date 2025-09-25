@@ -23,7 +23,7 @@ on:
 
 
 env:
-  UKC_METRO: "https://api.${{ vars.UKC_METRO }}.unikraft.cloud/v1"
+  UKC_METRO: "https://api.${{ vars.UKC_METRO_STAGING }}.unikraft.cloud/v1"
   UKC_TOKEN: ${{ secrets.UKC_TOKEN }}
   KRAFTKIT_NO_CHECK_UPDATES: true
   KRAFTKIT_LOG_LEVEL: debug
@@ -59,7 +59,7 @@ jobs:
           kraft cloud vm start -w 5s llama2-${GITHUB_RUN_ID};
           sleep 5;
 
-          curl -Lv --fail-with-body --max-time 10 https://llama2-${GITHUB_RUN_ID}.${{ vars.UKC_METRO }}.unikraft.app/api/llama2
+          curl -Lv --fail-with-body --max-time 10 https://llama2-${GITHUB_RUN_ID}.${{ vars.UKC_METRO_STAGING }}.unikraft.app/api/llama2
 
     - name: Cleanup
       uses: unikraft/kraftkit@staging
@@ -95,7 +95,7 @@ jobs:
           kraft cloud vm start -w 5s llama2-${GITHUB_RUN_ID}-dbg;
           sleep 5;
 
-          curl -Lv --fail-with-body --max-time 10 https://llama2-${GITHUB_RUN_ID}-dbg.${{ vars.UKC_METRO }}.unikraft.app/api/llama2
+          curl -Lv --fail-with-body --max-time 10 https://llama2-${GITHUB_RUN_ID}-dbg.${{ vars.UKC_METRO_STAGING }}.unikraft.app/api/llama2
 
     - name: Cleanup Debug
       uses: unikraft/kraftkit@staging
