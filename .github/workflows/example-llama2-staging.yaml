@@ -23,7 +23,7 @@ on:
 
 
 env:
-  UKC_METRO: ${{ vars.UKC_METRO }}
+  UKC_METRO: "https://api.${{ vars.UKC_METRO }}.unikraft.cloud/v1"
   UKC_TOKEN: ${{ secrets.UKC_TOKEN }}
   KRAFTKIT_NO_CHECK_UPDATES: true
   KRAFTKIT_LOG_LEVEL: debug
