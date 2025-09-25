@@ -52,7 +52,7 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 256 \
+            --memory 512 \
             --name http-node21-stable-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-testing/node:21 \
             --subdomain http-node21-stable-${GITHUB_RUN_ID} \
@@ -89,7 +89,7 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 256 \
+            --memory 512 \
             --name http-node21-stable-${GITHUB_RUN_ID}-dbg \
             --runtime index.unikraft.io/official-testing/node:21-dbg \
             --subdomain http-node21-stable-${GITHUB_RUN_ID}-dbg \

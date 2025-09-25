@@ -52,6 +52,7 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
+            --memory 256 \
             --name skipper-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/skipper:0.18 \
             --subdomain skipper-${GITHUB_RUN_ID} \
@@ -88,6 +89,7 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
+            --memory 256 \
             --name skipper-${GITHUB_RUN_ID}-dbg \
             --runtime index.unikraft.io/official-staging/skipper:0.18-dbg \
             --subdomain skipper-${GITHUB_RUN_ID}-dbg \
