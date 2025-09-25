@@ -27,7 +27,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  UKC_METRO: ${{ vars.UKC_METRO }}
+  UKC_METRO: "https://api.${{ vars.UKC_METRO_STABLE }}.unikraft.cloud/v1"
   UKC_TOKEN: ${{ secrets.UKC_TOKEN }}
   KRAFTKIT_NO_CHECK_UPDATES: true
   KRAFTKIT_LOG_LEVEL: debug
@@ -52,6 +52,7 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
+            --memory 256 \
             --name skipper-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-testing/skipper:0.18 \
             --subdomain skipper-${GITHUB_RUN_ID} \
@@ -62,7 +63,7 @@ jobs:
           kraft cloud vm start -w 5s skipper-${GITHUB_RUN_ID};
           sleep 5;
 
-          curl -Lv --fail-with-body --max-time 10 https://skipper-${GITHUB_RUN_ID}.${UKC_METRO}.kraft.host
+          curl -Lv --fail-with-body --max-time 10 https://skipper-${GITHUB_RUN_ID}.${{ vars.UKC_METRO_STABLE }}.unikraft.app
 
     - name: Cleanup
       uses: unikraft/kraftkit@staging
@@ -88,6 +89,7 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
+            --memory 256 \
             --name skipper-${GITHUB_RUN_ID}-dbg \
             --runtime index.unikraft.io/official-testing/skipper:0.18-dbg \
             --subdomain skipper-${GITHUB_RUN_ID}-dbg \
@@ -98,7 +100,7 @@ jobs:
           kraft cloud vm start -w 5s skipper-${GITHUB_RUN_ID}-dbg;
           sleep 5;
 
-          curl -Lv --fail-with-body --max-time 10 https://skipper-${GITHUB_RUN_ID}-dbg.${UKC_METRO}.kraft.host
+          curl -Lv --fail-with-body --max-time 10 https://skipper-${GITHUB_RUN_ID}-dbg.${{ vars.UKC_METRO_STABLE }}.unikraft.app
 
     - name: Cleanup Debug
       uses: unikraft/kraftkit@staging
