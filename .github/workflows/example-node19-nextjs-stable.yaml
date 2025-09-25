@@ -63,7 +63,7 @@ jobs:
           kraft cloud vm start -w 5s node19-nextjs-stable-${GITHUB_RUN_ID};
           sleep 5;
 
-          curl -Lv --fail-with-body --max-time 10 https://node19-nextjs-stable-${GITHUB_RUN_ID}.${UKC_METRO}.kraft.host
+          curl -Lv --fail-with-body --max-time 10 https://node19-nextjs-stable-${GITHUB_RUN_ID}.${{ vars.UKC_METRO }}.unikraft.app
 
     - name: Cleanup
       uses: unikraft/kraftkit@staging
@@ -100,7 +100,7 @@ jobs:
           kraft cloud vm start -w 5s node19-nextjs-stable-${GITHUB_RUN_ID}-dbg;
           sleep 5;
 
-          curl -Lv --fail-with-body --max-time 10 https://node19-nextjs-stable-${GITHUB_RUN_ID}-dbg.${UKC_METRO}.kraft.host
+          curl -Lv --fail-with-body --max-time 10 https://node19-nextjs-stable-${GITHUB_RUN_ID}-dbg.${{ vars.UKC_METRO }}.unikraft.app
 
     - name: Cleanup Debug
       uses: unikraft/kraftkit@staging
