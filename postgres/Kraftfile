@@ -11,4 +11,4 @@ labels:
 
 rootfs: ./Dockerfile
 
-cmd: ["wrapper.sh", "docker-entrypoint.sh", "postgres", "-c", "shared_preload_libraries='pg_ukc_scaletozero'"]
+cmd: ["/usr/local/bin/wrapper.sh", "postgres", "-c", "shared_preload_libraries='pg_ukc_scaletozero'"]

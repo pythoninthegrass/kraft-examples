@@ -6,17 +6,17 @@ To run PostgreSQL on Unikraft Cloud, first [install the `kraft` CLI tool](https:
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -M 1024 -e POSTGRES_PASSWORD=unikraft -p 5432:5432/tls .
+kraft cloud deploy --metro fra -M 1024 -e POSTGRES_PASSWORD=unikraft -p 5432:5432/tls .
 ```
 
 Now you can query PostgreSQL using [`psql`](https://www.postgresql.org/docs/current/app-psql.html).
 For that, use the following `psql` command:
 
 ```console
-psql "postgresql://postgres:unikraft@<NAME>.<METRO>.kraft.host:5432/postgres?sslmode=require"
+psql "postgresql://postgres:unikraft@<NAME>.<METRO>.unikraft.app:5432/postgres?sslmode=require"
 ```
 
-where `<NAME>.<METRO>.kraft.host` is the name of the instance created above.
+where `<NAME>.<METRO>.unikraft.app` is the fqdn of the instance created above.
 
 Use SQL and `psql` commands for your work.
 To stop the `psql` process, simply exit the command line interface.
@@ -34,7 +34,7 @@ kraft cloud volume create --name postgres --size 200
 Then start the PostgreSQL instance and mount that volume:
 
 ```console
-kraft cloud deploy --metro fra0 -M 1024 -e POSTGRES_PASSWORD=unikraft -e PGDATA=/volume/postgres -v postgres:/volume -p 5432:5432/tls .
+kraft cloud deploy --metro fra -M 1024 -e POSTGRES_PASSWORD=unikraft -e PGDATA=/volume/postgres -v postgres:/volume -p 5432:5432/tls .
 ```
 
 ## Learn more
