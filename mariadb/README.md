@@ -6,7 +6,7 @@ To run MariaDB on Unikraft Cloud, first [install the `kraft` CLI tool](https://u
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -p 3306:3306/tls -M 1024 .
+kraft cloud deploy --metro fra -p 3306:3306/tls -M 1024 .
 ```
 
 Get the results of the deployment by first forwarding the port:

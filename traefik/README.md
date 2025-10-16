@@ -6,7 +6,7 @@ To run Traefik on Unikraft Cloud, first [install the `kraft` CLI tool](https://u
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -M 512 -p 443:80/tls+http -p 8080:8080/tls .
+kraft cloud deploy --metro fra -M 512 -p 443:80/tls+http -p 8080:8080/tls .
 ```
 
 The command will deploy the `default.toml` configuration file.

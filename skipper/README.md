@@ -6,7 +6,7 @@ To run Skipper on Unikraft Cloud, first [install the `kraft` CLI tool](https://u
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -p 443:9090 .
+kraft cloud deploy --metro fra -p 443:9090 .
 ```
 
 The command will deploy the `example.eskip` configuration file.

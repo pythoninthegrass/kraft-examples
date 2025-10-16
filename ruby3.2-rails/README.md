@@ -6,7 +6,7 @@ To run Rails on Unikraft Cloud, first [install the `kraft` CLI tool](https://uni
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -M 1024 -p 443:3000 -e GEM_HOME=/usr/local/bundle -e BUNDLE_APP_CONFIG=/usr/local/bundle .
+kraft cloud deploy --metro fra -M 1024 -p 443:3000 -e GEM_HOME=/usr/local/bundle -e BUNDLE_APP_CONFIG=/usr/local/bundle .
 ```
 
 The command will build and deploy the files under `rootfs/`.

@@ -9,7 +9,7 @@ To run this example on Unikraft Cloud, first [install the `kraft` CLI tool](http
 
 ```bash
 export UKC_TOKEN=<your-unikraft-cloud-access-token>
-export UKC_METRO=fra0
+export UKC_METRO=fra
 ```
 
 Then `cd` into [this](.) directory, and invoke:
@@ -38,7 +38,7 @@ Now, you can access the `vsftpd` instance at the provided URL. You can test usin
 
 ```bash
 $ lftp -u ftpuser,ftpuserpass ftps://<URL>:21
-lftp ftpuser@damp-grass-awnbbv20.fra0.kraft.host:~> ls
+lftp ftpuser@damp-grass-awnbbv20.fra.unikraft.app:~> ls
 ```
 
 ## Volume

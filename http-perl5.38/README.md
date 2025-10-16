@@ -6,7 +6,7 @@ To run this example on Unikraft Cloud, first [install the `kraft` CLI tool](http
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -p 443:8080 -M 512 .
+kraft cloud deploy --metro fra -p 443:8080 -M 512 .
 ```
 
 The command will deploy the `server.pl` source code file.

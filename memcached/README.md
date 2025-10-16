@@ -6,13 +6,13 @@ To run Memcached on Unikraft Cloud, first [install the `kraft` CLI tool](https:/
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -p 11211:11211/tls -M 256 .
+kraft cloud deploy --metro fra -p 11211:11211/tls -M 256 .
 ```
 
 Get the results of the deployment by first forwarding the port (save the returned PID):
 
 ```console
-socat tcp-listen:11211,bind=127.0.0.1,fork,reuseaddr openssl:<NAME>.<METRO>.kraft.host:11211 &
+socat tcp-listen:11211,bind=127.0.0.1,fork,reuseaddr openssl:<NAME>.<METRO>.unikraft.app:11211 &
 ```
 
 Then, run the following commands to test that it works (you should see output when incrementing):

@@ -6,7 +6,7 @@ To run LLama2.c on Unikraft Cloud, first [install the `kraft` CLI tool](https://
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -M 1024 -p 443:8080 .
+kraft cloud deploy --metro fra -M 1024 -p 443:8080 .
 ```
 
 The command will build and deploy the files under `rootfs/`.

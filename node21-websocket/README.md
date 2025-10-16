@@ -7,7 +7,7 @@ To run the Node WebSocket server on Unikraft Cloud, first [install the `kraft` C
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -p 443:8080 -M 1Gi .
+kraft cloud deploy --metro fra -p 443:8080 -M 1Gi .
 ```
 
 The command will build the files in the current directory.
@@ -22,7 +22,7 @@ npm install -g wscat
 Then query the WebSocket server deployed on Unikraft Cloud, using its URL:
 
 ```console
-wscat --connect wss://<NAME>.<METRO>.kraft.host
+wscat --connect wss://<NAME>.<METRO>.unikraft.app
 ```
 
 Then enter messages, that will be replied by the server.

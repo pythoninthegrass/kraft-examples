@@ -6,13 +6,13 @@ To run Redis on Unikraft Cloud, first [install the `kraft` CLI tool](https://uni
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -p 6379:6379/tls -M 512 .
+kraft cloud deploy --metro fra -p 6379:6379/tls -M 512 .
 ```
 
 First, open a connection to the Redis server (save the pid):
 
 ```console
-socat tcp-listen:6379,bind=127.0.0.1,fork,reuseaddr openssl:<NAME>.<METRO>.kraft.host:6379 &
+socat tcp-listen:6379,bind=127.0.0.1,fork,reuseaddr openssl:<NAME>.<METRO>.unikraft.app:6379 &
 ```
 
 Then use `redis-cli` or `redis-benchmark` to test the connection (keep in mind that `socat` will also slow down your benchmark):

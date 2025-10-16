@@ -6,7 +6,7 @@ To run this example on Unikraft Cloud, first [install the `kraft` CLI tool](http
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -p 443:8080/http+tls -p 2222:2222/tls -e PUBKEY="...." .
+kraft cloud deploy --metro fra -p 443:8080/http+tls -p 2222:2222/tls -e PUBKEY="...." .
 ```
 
 The command will build and deploy the `http_server.c` source code file in debugging mode.
@@ -28,7 +28,7 @@ ssh -l root localhost -p 2222
 For extensive debug information with `strace`, add the `USE_STRACE=1` environment variable to the deploy command:
 
 ```console
-kraft cloud deploy --metro fra0 -p 443:8080/http+tls -p 2222:2222/tls -e PUBKEY="...." -e USE_STRACE=1 .
+kraft cloud deploy --metro fra -p 443:8080/http+tls -p 2222:2222/tls -e PUBKEY="...." -e USE_STRACE=1 .
 ```
 
 ## Learn more

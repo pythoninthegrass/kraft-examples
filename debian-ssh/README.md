@@ -6,7 +6,7 @@ To run this example on Unikraft Cloud, first [install the `kraft` CLI tool](http
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -M 1Gi -e PUBKEY="...." .
+kraft cloud deploy --metro fra -M 1Gi -e PUBKEY="...." .
 ```
 
 To connect to the debug console (via SSH), run the command below:

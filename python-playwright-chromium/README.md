@@ -16,8 +16,8 @@ Use the `?page=<REMOTE_URL>` to point the service to the remote page to screensh
 Query the service using commands such as:
 
 ```console
-curl "https://<NAME>.<METRO>.kraft.host/?page=https://google.com" -o ss-google.png
-curl "https://<NAME>.<METRO>.kraft.host/?page=https://github.com" -o ss-github.png
+curl "https://<NAME>.<METRO>.unikraft.app/?page=https://google.com" -o ss-google.png
+curl "https://<NAME>.<METRO>.unikraft.app/?page=https://github.com" -o ss-github.png
 ```
 
 ## Learn more
