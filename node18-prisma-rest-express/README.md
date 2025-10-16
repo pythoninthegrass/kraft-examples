@@ -44,7 +44,7 @@ To deploy this project onto Unikraft Cloud, first [install the `kraft` CLI tool]
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -M 512 -p 443:3000 .
+kraft cloud deploy --metro fra -M 512 -p 443:3000 .
 ```
 
 The command will deploy the files in the current directory.

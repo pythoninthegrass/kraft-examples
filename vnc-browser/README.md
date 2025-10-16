@@ -14,7 +14,7 @@ To run this example on Unikraft Cloud, first [install the `kraft` CLI tool](http
 
 ```bash
 export UKC_TOKEN=<your-unikraft-cloud-access-token>
-export UKC_METRO=fra0
+export UKC_METRO=fra
 ```
 
 Then `cd` into [this](.) directory, and invoke:

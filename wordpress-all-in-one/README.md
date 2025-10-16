@@ -13,7 +13,7 @@ This Wordpress builds connects together three types of services:
 Deploy the instance using:
 
 ```console
-kraft cloud deploy --metro fra0 -p 443:80 -M 4096 .
+kraft cloud deploy --metro fra -p 443:80 -M 4096 .
 ```
 
 After deploying, you can query the service using the provided URL.

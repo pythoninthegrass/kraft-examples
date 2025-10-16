@@ -6,13 +6,13 @@ To run this example on Unikraft Cloud, first [install the `kraft` CLI tool](http
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --scale-to-zero=idle --metro fra0 -p 443:8080 -M 512 .
+kraft cloud deploy --scale-to-zero=idle --metro fra -p 443:8080 -M 512 .
 ```
 
 Alternatively, you can expose the application with the non-HTTP mode by using a different port:
 
 ```console
-kraft cloud deploy --scale-to-zero=idle --metro fra0 -p 8080:8080/tls -M 512 .
+kraft cloud deploy --scale-to-zero=idle --metro fra -p 8080:8080/tls -M 512 .
 ```
 
 This mode allows you to use more advanced HTTP features such as [Server-Sent-Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events).

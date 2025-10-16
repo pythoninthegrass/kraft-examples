@@ -6,7 +6,7 @@ To run Bun on Unikraft Cloud, first [install the `kraft` CLI tool](https://unikr
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -p 443:3000 -M 512 .
+kraft cloud deploy --metro fra -p 443:3000 -M 512 .
 ```
 
 After deploying, you can query the service using the provided URL.

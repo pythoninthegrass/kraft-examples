@@ -6,7 +6,7 @@ To run Caddy on Unikraft Cloud, first [install the `kraft` CLI tool](https://uni
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -p 443:2015 .
+kraft cloud deploy --metro fra -p 443:2015 .
 ```
 
 The command will build and deploy the files under `rootfs/`.

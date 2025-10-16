@@ -6,7 +6,7 @@ To run Flask on Unikraft Cloud, first [install the `kraft` CLI tool](https://uni
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -M 512 -p 443:8080 .
+kraft cloud deploy --metro fra -M 512 -p 443:8080 .
 ```
 
 The command will deploy files in the current directory.

@@ -13,7 +13,7 @@ After deploying, you can query the service using the provided URL.
 Use the `/hello` path after the URL, such as below:
 
 ```console
-curl https://<NAME>.<METRO>.kraft.host/hello
+curl https://<NAME>.<METRO>.unikraft.app/hello
 ```
 ```text
 {"status":"pass","version":"v5.3.0-dev","description":"Tyk GW","details":{"redis":{"status":"pass","componentType":"datastore","time":"2024-04-30T10:37:29Z"}}}

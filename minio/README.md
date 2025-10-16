@@ -6,7 +6,7 @@ To run MinIO on Unikraft Cloud, first [install the `kraft` CLI tool](https://uni
 Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
-kraft cloud deploy --metro fra0 -p 443:9001/http+tls -p 9000:9000/tls -M 512 .
+kraft cloud deploy --metro fra -p 443:9001/http+tls -p 9000:9000/tls -M 512 .
 ```
 
 After deploying, you can query the service using the provided URL.
