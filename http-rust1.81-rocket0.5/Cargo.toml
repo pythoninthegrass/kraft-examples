@@ -6,3 +6,7 @@ publish = false
 
 [dependencies]
 rocket = "0.5.0"
+
+# Pin indexmap to a version compatible with Rust 1.81
+[dependencies.indexmap]
+version = "=2.6.0"
