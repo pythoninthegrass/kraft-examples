@@ -102,8 +102,7 @@ kraft cloud instance remove postgres-saan9
 
 ## Using volumes
 
-You can use [volumes](https://unikraft.com/docs/platform/volumes) for data persistence for you PostgreSQL instance.
-
+You can use [volumes](https://unikraft.com/docs/platform/volumes) for data persistence for your PostgreSQL instance.
 For that you would first create a volume:
 
 ```console
