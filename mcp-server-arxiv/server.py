@@ -1,67 +1,34 @@
-"""This wrapper sets up an SSE server for the MCP server using Starlette and Uvicorn."""
+"""ArXiv MCP Server with Streamable HTTP transport.
 
-import logging
+This uses the arxiv_mcp_server library and runs it via stdio.
+The server is exposed over Streamable HTTP using FastMCP's proxying capabilities.
+"""
+
+
+import argparse
 import uvicorn
-from mcp.server.sse import SseServerTransport
-from starlette.applications import Starlette
-from starlette.routing import Route
-from starlette.requests import Request
-from starlette.responses import Response
-from mcp.server.models import InitializationOptions
-from mcp.server import NotificationOptions
-from arxiv_mcp_server.server import server, settings
-
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("arxiv-mcp-server-sse")
-
-sse = SseServerTransport("/messages")
+from fastmcp import FastMCP
+from fastmcp.client.transports import StdioTransport
+from fastmcp.server.proxy import ProxyClient
 
 
-async def handle_health(request: Request):
-    """Handle health check requests."""
-    return Response("OK")
+def build_mcp_proxy(storage_path):
+    transport = StdioTransport(
+        command="uvx",
+        args=[
+            "arxiv-mcp-server",
+            "--storage-path", storage_path
+        ]
+    )
+    return FastMCP.as_proxy(ProxyClient(transport), name="ArXivProxy")
 
-
-async def handle_sse(request: Request):
-    """Handle incoming SSE connections and initialize the MCP server transport."""
-    async with sse.connect_sse(
-        request.scope, request.receive, request._send
-    ) as streams:
-        await server.run(
-            streams[0],
-            streams[1],
-            InitializationOptions(
-                server_name=settings.APP_NAME,
-                server_version=settings.APP_VERSION,
-                capabilities=server.get_capabilities(
-                    notification_options=NotificationOptions(resources_changed=True),
-                    experimental_capabilities={},
-                ),
-            ),
-        )
-
-
-async def handle_messages(request: Request):
-    """Handle incoming POST messages for the SSE transport."""
-    try:
-        result = await sse.handle_post_message(request.scope, request.receive, request._send)
-        if result is None:
-            return Response(status_code=202)  # Accepted
-        return result
-    except Exception as e:
-        logger.error("Error handling message: %s", e)
-        return Response(f"Error: {e}", status_code=500)
-
-
-app = Starlette(
-    routes=[
-        Route("/", endpoint=handle_health),
-        Route("/health", endpoint=handle_health),
-        Route("/sse", endpoint=handle_sse),
-        Route("/messages", endpoint=handle_messages, methods=["POST"]),
-    ]
-)
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--storage-path", type=str, default="/tmp/arxiv-papers",
+                        help="Path to paper storage directory")
+    args = parser.parse_args()
+
+    mcp = build_mcp_proxy(args.storage_path)
+    app = mcp.http_app(stateless_http=True)
     uvicorn.run(app, host="0.0.0.0", port=8080)

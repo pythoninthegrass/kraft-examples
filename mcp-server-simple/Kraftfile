@@ -1,6 +1,6 @@
 spec: v0.6
 
-name: mcp-arxiv
+name: mcp-simple
 
 runtime: base-compat:latest
 
@@ -11,4 +11,4 @@ labels:
 
 rootfs: ./Dockerfile
 
-cmd: [ "/usr/local/bin/python", "/src/server.py" ]
+cmd: [ "/usr/bin/python3", "/src/server.py" ]
