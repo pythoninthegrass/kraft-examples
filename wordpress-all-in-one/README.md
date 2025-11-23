@@ -29,7 +29,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:3000 -M 3072 .
+kraft cloud deploy -p 443:3000 -M 4096 .
 ```
 
 The output shows the instance address and other details:
@@ -42,7 +42,7 @@ The output shows the instance address and other details:
  ├───────── state: starting
  ├──────── domain: https://cool-silence-h5c1es4z.fra.unikraft.app
  ├───────── image: wordpress@sha256:3e116e6c74dd04e19d4062a14f8173974ba625179ace3c10a2c96546638c4cd8
- ├──────── memory: 3072 MiB
+ ├──────── memory: 4096 MiB
  ├─────── service: cool-silence-h5c1es4z
  ├── private fqdn: wordpress-fx5rb.internal
  ├──── private ip: 172.16.3.1
@@ -63,7 +63,7 @@ kraft cloud inst list
 
 ```ansi
 NAME             FQDN                                    STATE    STATUS       IMAGE                 MEMORY   VCPUS  ARGS                       BOOT TIME
-wordpress-fx5rb  cool-silence-h5c1es4z.fra.unikraft.app  running  since 2mins  wordpress@sha256:...  3.0 GiB  1      /usr/local/bin/wrapper.sh  1708.17 ms
+wordpress-fx5rb  cool-silence-h5c1es4z.fra.unikraft.app  running  since 2mins  wordpress@sha256:...  4.0 GiB  1      /usr/local/bin/wrapper.sh  1708.17 ms
 ```
 
 When done, you can remove the instance:

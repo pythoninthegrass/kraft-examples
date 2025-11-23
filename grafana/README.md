@@ -25,7 +25,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:3000 -M 1024 .
+kraft cloud deploy -p 443:3000 -M 2048 .
 ```
 
 The output shows the instance address and other details:
@@ -39,7 +39,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://icy-sea-i6m5fwyk.fra.unikraft.app
  ├───────── image: grafana@sha256:484d6f98cdc321443188b8f2900035182dffdb45069f3cd087dcb6851ddff3bc
  ├───── boot time: 502.65 ms
- ├──────── memory: 1024 MiB
+ ├──────── memory: 2048 MiB
  ├─────── service: dawn-water-4jlnvgpy
  ├── private fqdn: grafana-mgby4.internal
  ├──── private ip: 172.16.6.6
@@ -59,7 +59,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME           FQDN                               STATE    STATUS          IMAGE                        MEMORY    VCPUS  ARGS                                      BOOT TIME
-grafana-sikrv  icy-sea-i6m5fwyk.fra.unikraft.app  running  11 minutes ago  grafana@sha256:484d6f98c...  1024 MiB  1      /usr/share/grafana/bin/grafana server...  502651us
+grafana-sikrv  icy-sea-i6m5fwyk.fra.unikraft.app  running  11 minutes ago  grafana@sha256:484d6f98c...  2048 MiB  1      /usr/share/grafana/bin/grafana server...  502651us
 ```
 
 When done, you can remove the instance:

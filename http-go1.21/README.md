@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 .
+kraft cloud deploy -M 256 -p 443:8080 .
 ```
 
 The output shows the instance address and other details:
@@ -38,7 +38,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://red-dew-jtk6yxk1.fra.unikraft.app
  ├───────── image: http-go121@sha256:b16d61bb7898e764d8c11ab5a0b995e8c25a25b5ff89e161fc994ebf25a75680
  ├───── boot time: 11.05 ms
- ├──────── memory: 128 MiB
+ ├──────── memory: 256 MiB
  ├─────── service: red-dew-jtk6yxk1
  ├── private fqdn: http-go121-9a2wv.internal
  ├──── private ip: 172.16.3.3
@@ -64,7 +64,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME              FQDN                               STATE    STATUS        IMAGE                                        MEMORY   VCPUS  ARGS     BOOT TIME
-http-go121-9a2wv  red-dew-jtk6yxk1.fra.unikraft.app  running  1 minute ago  alex/http-go121@sha256:b16d61bb7898e764d...  128 MiB  1      /server  9324us
+http-go121-9a2wv  red-dew-jtk6yxk1.fra.unikraft.app  running  1 minute ago  alex/http-go121@sha256:b16d61bb7898e764d...  256 MiB  1      /server  9324us
 ```
 
 When done, you can remove the instance:

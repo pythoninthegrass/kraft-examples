@@ -27,7 +27,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:3000 -M 2048 .
+kraft cloud deploy -p 443:3000 -M 4096 .
 ```
 
 The output shows the instance address and other details:
@@ -41,7 +41,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://damp-bobo-wg43p36e.fra.unikraft.app
  ├───────── image: spin-wagi-http@sha256:57a5151996d83332af6da521e1cd92271a8c3ac7ae26bc44a7c0dbbc0a30e577
  ├───── boot time: 300.06 ms
- ├──────── memory: 2048 MiB
+ ├──────── memory: 4096 MiB
  ├─────── service: damp-bobo-wg43p36e
  ├── private fqdn: spin-wagi-http-is72r.internal
  ├──── private ip: 172.16.28.16
@@ -74,7 +74,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME                  FQDN                                 STATE    STATUS        IMAGE                   MEMORY   VCPUS  ARGS                                      BOOT TIME
-spin-wagi-http-is72r  damp-bobo-wg43p36e.fra.unikraft.app  running  1 minute ago  spin-wagi-http@sha2...  2.0 GiB  1      /usr/bin/spin up --from /app/spin.tom...  300064us
+spin-wagi-http-is72r  damp-bobo-wg43p36e.fra.unikraft.app  running  1 minute ago  spin-wagi-http@sha2...  4.0 GiB  1      /usr/bin/spin up --from /app/spin.tom...  300064us
 ```
 
 When done, you can remove the instance:

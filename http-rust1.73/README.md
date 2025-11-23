@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy the app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 .
+kraft cloud deploy -M 256 -p 443:8080 .
 ```
 
 The output shows the instance address and other details:
@@ -39,7 +39,7 @@ The output shows the instance address and other details:
  ├──── domain: https://hidden-sky-c1tp5r6e.fra.unikraft.app
  ├───── image: http-rust173@sha256:451277edb27c1201929d2da12898d910cca2f0a2ca71b8f8fa7da22c23a10bba 
  ├─ boot time: 17.49 ms
- ├──── memory: 128 MiB
+ ├──── memory: 256 MiB
  ├─── service: hidden-sky-c1tp5r6e
  ├ private ip: 10.0.0.109
  └────── args: /server
@@ -66,7 +66,7 @@ kraft cloud instance list
 
 ```ansi
 NAME                FQDN                                  STATE    STATUS   IMAGE                                    MEMORY   VCPUS  ARGS     BOOT TIME
-http-rust173-8gsmk  hidden-sky-c1tp5r6e.fra.unikraft.app  standby  standby  http-rust173@sha256:451277edb27c1201...  128 MiB  1      /server  17.49 ms
+http-rust173-8gsmk  hidden-sky-c1tp5r6e.fra.unikraft.app  standby  standby  http-rust173@sha256:451277edb27c1201...  256 MiB  1      /server  17.49 ms
 ```
 
 When done, you can remove the instance:

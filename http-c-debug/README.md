@@ -24,13 +24,13 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy the app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080/http+tls -p 2222:2222/tls -e PUBKEY="...." .
+kraft cloud deploy -M 256Mi -p 443:8080/http+tls -p 2222:2222/tls -e PUBKEY="...." .
 ```
 
 For extensive debug information with `strace`, add the `USE_STRACE=1` environment variable to the deploy command:
 
 ```bash
-kraft cloud deploy -p 443:8080 -p 2222:2222 -e PUBKEY="...." -e USE_STRACE=1 .
+kraft cloud deploy -M 256Mi -p 443:8080 -p 2222:2222 -e PUBKEY="...." -e USE_STRACE=1 .
 ```
 
 The output shows the instance address and other details:
@@ -45,7 +45,7 @@ The output shows the instance address and other details:
  ├──── domain: https://patient-snow-zdzhdy8r.fra.unikraft.app
  ├───── image: http-c-debug@sha256:b24b95e236c8eff69615dd4f5d257beed5ee4047fd98d1b6fb200f89c63fa54c 
  ├─ boot time: 66.56 ms
- ├──── memory: 128 MiB
+ ├──── memory: 256 MiB
  ├─── service: patient-snow-zdzhdy8r
  ├ private ip: 10.0.0.109
  └────── args: /usr/bin/wrapper.sh
@@ -86,7 +86,7 @@ kraft cloud instance list
 
 ```ansi
 NAME                FQDN                                    STATE    STATUS       IMAGE                      MEMORY   VCPUS  ARGS                 BOOT TIME
-http-c-debug-5pvem  patient-snow-zdzhdy8r.fra.unikraft.app  running  since 4mins  http-c-debug@sha256:b2...  128 MiB  1      /usr/bin/wrapper.sh  66.56 ms
+http-c-debug-5pvem  patient-snow-zdzhdy8r.fra.unikraft.app  running  since 4mins  http-c-debug@sha256:b2...  256 MiB  1      /usr/bin/wrapper.sh  66.56 ms
 ```
 
 When done, you can remove the instance:

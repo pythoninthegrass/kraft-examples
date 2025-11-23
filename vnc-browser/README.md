@@ -32,7 +32,7 @@ kraft cloud deploy \
     --scale-to-zero on \
     --scale-to-zero-stateful \
     --scale-to-zero-cooldown 4s \
-    -M 2048 \
+    -M 4096 \
     -p 443:6080 \
     -n vnc-browser \
     .
@@ -49,7 +49,7 @@ The output shows the instance address and other details:
  ├────── state: starting
  ├───── domain: https://weathered-fog-y5jjmwfd.fra.unikraft.app
  ├────── image: vnc-browser@sha256:fdb4887e84362ebbaf54c713e0d85f547e8ee173fe63a6ab39e94b7e612a9892 
- ├───── memory: 2048 MiB
+ ├───── memory: 4096 MiB
  ├──── service: weathered-fog-y5jjmwfd
  ├─ private ip: 10.0.0.49
  └─────── args: /wrapper.sh

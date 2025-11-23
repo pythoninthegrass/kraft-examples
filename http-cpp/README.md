@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 .
+kraft cloud deploy -M 256 -p 443:8080 .
 ```
 
 The output shows the instance address and other details:
@@ -38,7 +38,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://throbbing-wave-grxjih4t.fra.unikraft.app
  ├───────── image: http-cpp@sha256:a58873987104b52c13b79168a2e2f1a81876ba6efacd6dbc98e996afe5c09699
  ├───── boot time: 15.61 ms
- ├──────── memory: 128 MiB
+ ├──────── memory: 256 MiB
  ├─────── service: throbbing-wave-grxjih4t
  ├── private fqdn: http-cpp-jzbuo.internal
  ├──── private ip: 172.16.6.5
@@ -64,7 +64,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME            FQDN                                      STATE    STATUS        IMAGE                                                           MEMORY   VCPUS  ARGS          BOOT TIME
-http-cpp-jzbuo  throbbing-wave-grxjih4t.fra.unikraft.app  running  1 minute ago  http-cpp@sha256:a58873987104b52c13b79168a2e2f1a81876ba6efac...  128 MiB  1      /http_server  15614us
+http-cpp-jzbuo  throbbing-wave-grxjih4t.fra.unikraft.app  running  1 minute ago  http-cpp@sha256:a58873987104b52c13b79168a2e2f1a81876ba6efac...  256 MiB  1      /http_server  15614us
 ```
 
 When done, you can remove the instance:

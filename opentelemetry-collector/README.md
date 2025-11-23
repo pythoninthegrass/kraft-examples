@@ -27,7 +27,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -M 1024M .
+kraft cloud deploy -M 1536M .
 ```
 
 The output shows the instance address and other details:
@@ -39,7 +39,7 @@ The output shows the instance address and other details:
  ├────────── uuid: 40e8b154-b3b6-4312-ae69-2cdb794b15e4
  ├───────── state: starting
  ├───────── image: opentelemetry-collector@sha256:64f73ea5fe208f54e5212f57979f24bebcf36276495462c52b380d15dd539ced
- ├──────── memory: 976 MiB
+ ├──────── memory: 1536 MiB
  ├── private fqdn: opentelemetry-collector-bvtnh.internal
  ├──── private ip: 172.16.3.3
  └────────── args: /usr/bin/otelcontribcol --config /etc/otel/config.yaml
@@ -59,8 +59,8 @@ You can list information about the instance by running:
 kraft cloud instance list
 ```
 ```ansi
-NAME                           FQDN  STATE    STATUS        IMAGE             MEMORY   VCPUS  ARGS                                 BOOT TIME
-opentelemetry-collector-bvtnh        running  since 11mins  opentelemetry...  976 MiB  1      /usr/bin/otelcontribcol --config...  177.62 ms
+NAME                           FQDN  STATE    STATUS        IMAGE             MEMORY    VCPUS  ARGS                                 BOOT TIME
+opentelemetry-collector-bvtnh        running  since 11mins  opentelemetry...  1536 MiB  1      /usr/bin/otelcontribcol --config...  177.62 ms
 ```
 
 When done, you can remove the instance:

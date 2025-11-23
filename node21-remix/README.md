@@ -25,7 +25,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy the app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:3000 -M 512 .
+kraft cloud deploy -p 443:3000 -M 768 .
 ```
 
 The output shows the instance address and other details:
@@ -39,7 +39,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://long-star-1tms9h1z.fra.unikraft.app
  ├───────── image: node21-remix@sha256:300eefce3de136ad9c782f010b69da01100ae5f0ca17f038f92321d735d6675f
  ├───── boot time: 153.47 ms
- ├──────── memory: 512 MiB
+ ├──────── memory: 768 MiB
  ├─────── service: long-star-1tms9h1z
  ├── private fqdn: node21-remix-jvj6b.internal
  ├──── private ip: 172.16.6.8
@@ -57,7 +57,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME                FQDN                                 STATE    STATUS         IMAGE          MEMORY   VCPUS  ARGS                              BOOT TIME
-node21-remix-jvj6b  long-star-1tms9h1z.fra.unikraft.app  running  1 minutes ago  node21-rem...  256 MiB  1      /usr/bin/node /usr/src/server...  67.65 ms
+node21-remix-jvj6b  long-star-1tms9h1z.fra.unikraft.app  running  1 minutes ago  node21-rem...  768 MiB  1      /usr/bin/node /usr/src/server...  67.65 ms
 ```
 
 When done, you can remove the instance:

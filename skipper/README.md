@@ -25,7 +25,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:9090 .
+kraft cloud deploy -p 443:9090 -M 256 .
 ```
 
 The output shows the instance address and other details:
@@ -39,7 +39,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://aged-sea-o7d3c42s.fra.unikraft.app
  ├───────── image: skipper@sha256:5483eaf3612cca2116ceaab9be42557686324f1d30337ae15d0495eef63d0386
  ├───── boot time: 43.71 ms
- ├──────── memory: 128 MiB
+ ├──────── memory: 256 MiB
  ├─────── service: aged-sea-o7d3c42s
  ├── private fqdn: skipper-mx4ai.internal
  ├──── private ip: 172.16.6.4
@@ -65,7 +65,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME           FQDN                                STATE    STATUS        IMAGE                      MEMORY   VCPUS  ARGS                                          BOOT TIME
-skipper-mx4ai  aged-sea-o7d3c42s.fra.unikraft.app  running  1 minute ago  skipper@sha256:5483eaf...  128 MiB  1      /usr/bin/skipper -address :9090 -routes-f...  43709us
+skipper-mx4ai  aged-sea-o7d3c42s.fra.unikraft.app  running  1 minute ago  skipper@sha256:5483eaf...  256 MiB  1      /usr/bin/skipper -address :9090 -routes-f...  43709us
 ```
 
 When done, you can remove the instance:

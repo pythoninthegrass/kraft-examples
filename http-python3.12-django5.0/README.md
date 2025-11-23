@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:80 -M 512 .
+kraft cloud deploy -p 443:80 -M 1024 .
 ```
 
 The output shows the instance address and other details:
@@ -38,7 +38,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://dawn-sound-n5wrkxi2.fra.unikraft.app
  ├───────── image: http-python312-django50@sha256:221666d414299aff54dbf10020b3d540270ee0c5907c1c6a728ca254ce8b0e50
  ├───── boot time: 80.32 ms
- ├──────── memory: 512 MiB
+ ├──────── memory: 1024 MiB
  ├─────── service: dawn-sound-n5wrkxi2
  ├── private fqdn: http-python312-django50-vt56c.internal
  ├──── private ip: 172.16.6.5
@@ -85,8 +85,8 @@ You can list information about the instance by running:
 kraft cloud instance list
 ```
 ```ansi
-NAME                           FQDN                                  STATE    STATUS        IMAGE                                        MEMORY   VCPUS  ARGS                           BOOT TIME
-http-python312-django50-vt56c  dawn-sound-n5wrkxi2.fra.unikraft.app  running  1 minute ago  http-python312-django50@sha256:221666d41...  512 MiB  1      /usr/bin/python3 /app/main.py  80321us
+NAME                           FQDN                                  STATE    STATUS        IMAGE                                        MEMORY    VCPUS  ARGS                           BOOT TIME
+http-python312-django50-vt56c  dawn-sound-n5wrkxi2.fra.unikraft.app  running  1 minute ago  http-python312-django50@sha256:221666d41...  1024 MiB  1      /usr/bin/python3 /app/main.py  80321us
 ```
 
 When done, you can remove the instance:
@@ -137,7 +137,7 @@ The [`http-python3.12-flask3.0`](https://github.com/unikraft-cloud/examples/tree
 Run the command below to deploy the app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:80 -M 512 .
+kraft cloud deploy -p 443:80 -M 1024 .
 ```
 
 Differences from the Django app are also the steps required to create an `pip`-based app:

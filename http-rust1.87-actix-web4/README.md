@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 .
+kraft cloud deploy -M 256 -p 443:8080 .
 ```
 
 The output shows the instance address and other details:
@@ -38,7 +38,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://autumn-silence-wupu2nus.fra.unikraft.app
  ├───────── image: http-rust187-actix-web4@sha256:11723705230f0f4545d2be7e4867dc67b396870769e91f05e2fa6d9da94f9b59
  ├───── boot time: 11.67 ms
- ├──────── memory: 128 MiB
+ ├──────── memory: 256 MiB
  ├─────── service: autumn-silence-wupu2nus
  ├── private fqdn: http-rust187-actix-web4-3pj27.internal
  ├──── private ip: 172.16.3.3
@@ -66,7 +66,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME                           FQDN                                      STATE    STATUS          IMAGE                                                      MEMORY   VCPUS  ARGS     BOOT TIME
-http-rust187-actix-web4-3pj27  autumn-silence-wupu2nus.fra.unikraft.app  running  10 minutes ago  http-rust187-actix-web4@sha256:11723705230f0f4545d2be7...  128 MiB  1      /server  11672us
+http-rust187-actix-web4-3pj27  autumn-silence-wupu2nus.fra.unikraft.app  running  10 minutes ago  http-rust187-actix-web4@sha256:11723705230f0f4545d2be7...  256 MiB  1      /server  11672us
 ```
 
 When done, you can remove the instance:
