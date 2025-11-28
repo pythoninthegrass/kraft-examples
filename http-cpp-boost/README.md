@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 .
+kraft cloud deploy -M 256 -p 443:8080 .
 ```
 
 The output shows the instance address and other details:
@@ -38,7 +38,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://red-snow-3bn7bzc8.fra.unikraft.app
  ├───────── image: http-cpp-boost@sha256:61cf86b89fed46351af53689e27189315e466576475f61c7240bf17644613489
  ├───── boot time: 15.00 ms
- ├──────── memory: 128 MiB
+ ├──────── memory: 256 MiB
  ├─────── service: red-snow-3bn7bzc8
  ├── private fqdn: http-cpp-boost-rae7s.internal
  ├──── private ip: 172.16.6.4
@@ -64,7 +64,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME                  FQDN                                STATE    STATUS        IMAGE                                                        MEMORY   VCPUS  ARGS          BOOT TIME
-http-cpp-boost-rae7s  red-snow-3bn7bzc8.fra.unikraft.app  running  1 minute ago  http-cpp-boost@sha256:61cf86b89fed46351af53689e27189315e...  128 MiB  1      /http_server  15000us
+http-cpp-boost-rae7s  red-snow-3bn7bzc8.fra.unikraft.app  running  1 minute ago  http-cpp-boost@sha256:61cf86b89fed46351af53689e27189315e...  256 MiB  1      /http_server  15000us
 ```
 
 When done, you can remove the instance:

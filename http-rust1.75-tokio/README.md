@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 .
+kraft cloud deploy -M 256 -p 443:8080 .
 ```
 
 The output shows the instance address and other details:
@@ -38,7 +38,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://empty-dawn-3coedrce.fra.unikraft.app
  ├───────── image: http-rust175-tokio@sha256:0ce75912711aa2329232a2ca6c3ccb7a244b6d546fafc081f815c2fde8224856
  ├───── boot time: 21.41 ms
- ├──────── memory: 128 Mi
+ ├──────── memory: 256 Mi
  ├─────── service: empty-dawn-3coedrce
  ├── private fqdn: http-rust175-tokio-6gxsp.internal
  ├──── private ip: 172.16.6.3
@@ -64,7 +64,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME                      FQDN                                  STATE    STATUS        IMAGE                                  MEMORY   VCPUS  ARGS     BOOT TIME
-http-rust175-tokio-6gxsp  empty-dawn-3coedrce.fra.unikraft.app  running  1 minute ago  http-rust175-tokio@sha256:0ce75912...  128 MiB  1      /server  21412us
+http-rust175-tokio-6gxsp  empty-dawn-3coedrce.fra.unikraft.app  running  1 minute ago  http-rust175-tokio@sha256:0ce75912...  256 MiB  1      /server  21412us
 ```
 
 When done, you can remove the instance:

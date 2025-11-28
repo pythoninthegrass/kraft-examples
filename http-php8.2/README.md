@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 .
+kraft cloud deploy -M 512 -p 443:8080 .
 ```
 
 The output shows the instance address and other details:
@@ -38,7 +38,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://aged-fire-rh0oi0tj.fra.unikraft.app
  ├───────── image: http-php82@sha256:dccaac053982673765b8f00497a9736c31458ab23ad59a550b09aa8dedfabb34
  ├───── boot time: 32.80 ms
- ├──────── memory: 128 MiB
+ ├──────── memory: 512 MiB
  ├─────── service: aged-fire-rh0oi0tj
  ├── private fqdn: http-php82-g00si.internal
  ├──── private ip: 172.16.3.3
@@ -64,7 +64,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME              FQDN                                 STATE    STATUS          IMAGE                                   MEMORY   VCPUS  ARGS                                    BOOT TIME
-http-php82-g00si  aged-fire-rh0oi0tj.fra.unikraft.app  running  50 seconds ago  http-php82@sha256:dccaac05398267376...  256 MiB  1      /usr/local/bin/php /usr/src/server.php  32801us
+http-php82-g00si  aged-fire-rh0oi0tj.fra.unikraft.app  running  50 seconds ago  http-php82@sha256:dccaac05398267376...  512 MiB  1      /usr/local/bin/php /usr/src/server.php  32801us
 ```
 
 When done, you can remove the instance:

@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 -M 512 .
+kraft cloud deploy -p 443:8080 -M 768 .
 ```
 
 ```ansi
@@ -36,7 +36,7 @@ kraft cloud deploy -p 443:8080 -M 512 .
  ├─────────── url: https://lingering-orangutan-840mmdvd.fra.unikraft.app
  ├───────── image: python312-flask30-sqlite@sha256:bdb0bf35a9675b9b3836cbb626606da0606334d91768c7ba31195c3062d6f517
  ├───── boot time: 166.25 ms
- ├──────── memory: 512 MiB
+ ├──────── memory: 768 MiB
  ├─────── service: lingering-orangutan-840mmdvd
  ├── private fqdn: python312-flask30-sqlite-qodkd.internal
  ├──── private ip: 172.16.3.3
@@ -79,7 +79,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME                            FQDN                                           STATE    STATUS        IMAGE                               MEMORY   VCPUS  ARGS                             BOOT TIME
-python312-flask30-sqlite-qodkd  lingering-orangutan-840mmdvd.fra.unikraft.app  running  1 minute ago  python312-flask30-sqlite@sha256...  512 MiB  1      /usr/bin/python3 /app/server.py  166250us
+python312-flask30-sqlite-qodkd  lingering-orangutan-840mmdvd.fra.unikraft.app  running  1 minute ago  python312-flask30-sqlite@sha256...  768 MiB  1      /usr/bin/python3 /app/server.py  166250us
 ```
 
 When done, you can remove the instance:

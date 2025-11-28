@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy the app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:3000 -M 256 .
+kraft cloud deploy -p 443:3000 -M 768 .
 ```
 
 The output shows the instance address and other details:
@@ -38,7 +38,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://small-frog-ri8c1vtw.fra.unikraft.app
  ├───────── image: node21-nextjs@sha256:ea5b2f145eea9762431ebdea933dd1dfb8427fe23306d2bd7966dd502d6c88f6
  ├───── boot time: 83.60 ms
- ├──────── memory: 256 MiB
+ ├──────── memory: 768 MiB
  ├─────── service: small-frog-ri8c1vtw
  ├── private fqdn: node21-nextjs-bfrq0.internal
  ├──── private ip: 172.16.28.2
@@ -66,7 +66,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME                 FQDN                                  STATE    STATUS        IMAGE                    MEMORY   VCPUS  ARGS                              BOOT TIME
-node21-nextjs-bfrq0  small-frog-ri8c1vtw.fra.unikraft.app  running  1 minute ago  node21-nextjs@sha256...  256 MiB  1      /usr/bin/node /usr/src/server.js  83600us
+node21-nextjs-bfrq0  small-frog-ri8c1vtw.fra.unikraft.app  running  1 minute ago  node21-nextjs@sha256...  768 MiB  1      /usr/bin/node /usr/src/server.js  83600us
 ```
 
 When done, you can remove the instance:

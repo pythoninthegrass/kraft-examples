@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy the app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 .
+kraft cloud deploy -M 256 -p 443:8080 .
 ```
 
 The output shows the instance address and other details:
@@ -39,7 +39,7 @@ The output shows the instance address and other details:
  ├──── domain: https://still-resonance-bja3lste.fra.unikraft.app
  ├───── image: http-c@sha256:375677bf052f14c18ca79c86d2f47a68f3ea5f8636bcd8830753a254f0e06c1b 
  ├─ boot time: 13.29 ms
- ├──── memory: 128 MiB
+ ├──── memory: 256 MiB
  ├─── service: still-resonance-bja3lste
  ├ private ip: 10.0.0.49
  └────── args: /http_server
@@ -66,7 +66,7 @@ kraft cloud instance list
 
 ```ansi
 NAME          FQDN                                       STATE    STATUS   IMAGE                                     MEMORY   VCPUS  ARGS          BOOT TIME
-http-c-is2s9  still-resonance-bja3lste.fra.unikraft.app  standby  standby  http-c@sha256:375677bf052f14c18ca79c8...  128 MiB  1      /http_server  12.91 ms
+http-c-is2s9  still-resonance-bja3lste.fra.unikraft.app  standby  standby  http-c@sha256:375677bf052f14c18ca79c8...  256 MiB  1      /http_server  12.91 ms
 ```
 
 When done, you can remove the instance:

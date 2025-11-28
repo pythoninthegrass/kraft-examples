@@ -25,7 +25,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -M 512 -p 443:80/tls+http -p 8080:8080/tls .
+kraft cloud deploy -M 1024 -p 443:80/tls+http -p 8080:8080/tls .
 ```
 
 The output shows the instance address and other details:
@@ -39,7 +39,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://holy-cherry-rye39b1x.fra.unikraft.app
  ├───────── image: traefik@sha256:f6dd913a81f6a057ceb9db7844222d7287b2a83f668cca88c73c2e85554cb526
  ├───── boot time: 53.66 ms
- ├──────── memory: 512 MiB
+ ├──────── memory: 1024 MiB
  ├─────── service: holy-cherry-rye39b1x
  ├── private fqdn: traefik-wqe7e.internal
  ├──── private ip: 172.16.28.16
@@ -70,8 +70,8 @@ You can list information about the instance by running:
 kraft cloud instance list
 ```
 ```ansi
-NAME           FQDN                                   STATE    STATUS         IMAGE                        MEMORY   VCPUS  ARGS                                           BOOT TIME
-traefik-wqe7e  holy-cherry-rye39b1x.fra.unikraft.app  running  8 minutes ago  traefik@sha256:f6dd913a8...  512 MiB  1      /usr/bin/traefik -configFile /etc/traefik/...  53661us
+NAME           FQDN                                   STATE    STATUS         IMAGE                        MEMORY    VCPUS  ARGS                                           BOOT TIME
+traefik-wqe7e  holy-cherry-rye39b1x.fra.unikraft.app  running  8 minutes ago  traefik@sha256:f6dd913a8...  1024 MiB  1      /usr/bin/traefik -configFile /etc/traefik/...  53661us
 ```
 
 When done, you can remove the instance:

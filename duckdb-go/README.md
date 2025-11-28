@@ -25,7 +25,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 .
+kraft cloud deploy -p 443:8080 -M 256Mi .
 ```
 
 The output shows the instance address and other details:
@@ -39,7 +39,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://autumn-gorilla-hg4h6sup.fra.unikraft.app
  ├───────── image: duckdb-go@sha256:6999293f8694ac00beb6a1d639fab8f96f78c2e6ecb8ccb2311539908895a699
  ├───── boot time: 32.12 ms
- ├──────── memory: 128 MiB
+ ├──────── memory: 256 MiB
  ├─────── service: autumn-gorilla-hg4h6sup
  ├── private fqdn: duckdb-go-qfd8x.internal
  ├──── private ip: 172.16.6.2
@@ -65,7 +65,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME             FQDN                                      STATE    STATUS        IMAGE         MEMORY   VCPUS  ARGS     BOOT TIME
-duckdb-go-qfd8x  autumn-gorilla-hg4h6sup.fra.unikraft.app  running  1 minute ago  duckdb-go...  128 MiB  1      /server  32118us
+duckdb-go-qfd8x  autumn-gorilla-hg4h6sup.fra.unikraft.app  running  1 minute ago  duckdb-go...  256 MiB  1      /server  32118us
 ```
 
 When done, you can remove the instance:

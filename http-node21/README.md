@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy the app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 -M 256 .
+kraft cloud deploy -p 443:8080 -M 512 .
 ```
 
 The output shows the instance address and other details:
@@ -38,7 +38,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://ancient-haze-sd3wwi0x.fra.unikraft.app
  ├───────── image: http-node21@sha256:de174e3703c79a048f0af52344c373296b55f3ca2b96cd29e16c1f014cefd232
  ├───── boot time: 41.65 ms
- ├──────── memory: 256 MiB
+ ├──────── memory: 512 MiB
  ├─────── service: ancient-haze-sd3wwi0x
  ├── private fqdn: http-node21-ubl8g.internal
  ├──── private ip: 172.16.3.3
@@ -64,7 +64,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME               FQDN                                    STATE    STATUS          IMAGE                                   MEMORY   VCPUS  ARGS                              BOOT TIME
-http-node21-ubl8g  ancient-haze-sd3wwi0x.fra.unikraft.app  running  50 seconds ago  http-node21@sha256:de174e3703c79a04...  256 MiB  1      /usr/bin/node /usr/src/server.js  31654us
+http-node21-ubl8g  ancient-haze-sd3wwi0x.fra.unikraft.app  running  50 seconds ago  http-node21@sha256:de174e3703c79a04...  512 MiB  1      /usr/bin/node /usr/src/server.js  31654us
 ```
 
 When done, you can remove the instance:
@@ -125,7 +125,7 @@ cd examples/node21-expressjs/
 Run the command below to deploy the app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:3000 -M 256 .
+kraft cloud deploy -p 443:3000 -M 512 .
 ```
 
 Differences from the `http-node21` app are also the steps required to create an `npm`-based app:

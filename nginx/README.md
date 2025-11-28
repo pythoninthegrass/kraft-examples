@@ -26,7 +26,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 .
+kraft cloud deploy -M 256 -p 443:8080 .
 ```
 
 The output shows the instance address and other details:
@@ -40,7 +40,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://nameless-fog-0tvh1uov.fra.unikraft.app
  ├───────── image: nginx@sha256:f51ecc121c9ca34abb88a2bc6a69765501304f7893f7e85af15fbec3dc86e2bd
  ├───── boot time: 11.13ms
- ├──────── memory: 128 MiB
+ ├──────── memory: 256 MiB
  ├─────── service: nameless-fog-0tvh1uov
  ├── private fqdn: nginx-67zbu.internal
  ├──── private ip: 172.16.3.3
@@ -70,7 +70,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME         FQDN                                    STATE    STATUS         IMAGE                               MEMORY   VCPUS  ARGS                                     BOOT TIME
-nginx-67zbu  nameless-fog-0tvh1uov.fra.unikraft.app  running  5 minutes ago  nginx@sha256:f51ecc121c9ca34abb...  128 MiB  1      /usr/bin/nginx -c /etc/nginx/nginx.conf  11129us
+nginx-67zbu  nameless-fog-0tvh1uov.fra.unikraft.app  running  5 minutes ago  nginx@sha256:f51ecc121c9ca34abb...  256 MiB  1      /usr/bin/nginx -c /etc/nginx/nginx.conf  11129us
 ```
 
 When done, you can remove the instance:

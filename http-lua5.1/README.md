@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 .
+kraft cloud deploy -M 256 -p 443:8080 .
 ```
 
 The output shows the instance address and other details:
@@ -38,7 +38,7 @@ The output shows the instance address and other details:
  ├─────────── url: https://young-night-5fpf0jj8.fra.unikraft.app
  ├───────── image: http-lua51@sha256:278cb8b14f9faf9c2702dddd8bfb6124912d82c11b4a2c6590b6e32fc4049472
  ├───── boot time: 15.09 ms
- ├──────── memory: 128 MiB
+ ├──────── memory: 256 MiB
  ├─────── service: young-night-5fpf0jj8
  ├── private fqdn: http-lua51-ma2i9.internal
  ├──── private ip: 172.16.3.3
@@ -64,7 +64,7 @@ kraft cloud instance list
 ```
 ```ansi
 NAME              FQDN                                   STATE    STATUS        IMAGE                                    MEMORY   VCPUS  ARGS                           BOOT TIME
-http-lua51-ma2i9  young-night-5fpf0jj8.fra.unikraft.app  running  1 minute ago  http-lua51@sha256:278cb8b14f9faf9c27...  128 MiB  1      /usr/bin/lua /http_server.lua  15094us
+http-lua51-ma2i9  young-night-5fpf0jj8.fra.unikraft.app  running  1 minute ago  http-lua51@sha256:278cb8b14f9faf9c27...  256 MiB  1      /usr/bin/lua /http_server.lua  15094us
 ```
 
 When done, you can remove the instance:
