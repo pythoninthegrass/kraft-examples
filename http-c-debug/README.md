@@ -24,13 +24,13 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy the app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -M 256Mi -p 443:8080/http+tls -p 2222:2222/tls -e PUBKEY="...." .
+kraft cloud deploy -p 443:8080/http+tls -p 2222:2222/tls -M 256 -e PUBKEY="...." .
 ```
 
 For extensive debug information with `strace`, add the `USE_STRACE=1` environment variable to the deploy command:
 
 ```bash
-kraft cloud deploy -M 256Mi -p 443:8080 -p 2222:2222 -e PUBKEY="...." -e USE_STRACE=1 .
+kraft cloud deploy -p 443:8080 -p 2222:2222 -M 256 -e PUBKEY="...." -e USE_STRACE=1 .
 ```
 
 The output shows the instance address and other details:

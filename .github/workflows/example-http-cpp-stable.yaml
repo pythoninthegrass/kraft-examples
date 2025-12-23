@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-cpp-stable.yaml'
     - 'http-cpp/**'
     - '!http-cpp/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-cpp-stable.yaml'
     - 'http-cpp/**'
@@ -51,11 +51,11 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 256 \
             --name http-cpp-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-testing/base-compat:latest \
             --subdomain http-cpp-${GITHUB_RUN_ID} \
             -p 443:8080 \
+            -M 256 \
             .;
 
           # wait for the instance to start

@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -M 512 -p 443:8080 .
+kraft cloud deploy -p 443:8080 -M 512 .
 ```
 
 The output shows the instance address and other details:
@@ -115,7 +115,7 @@ The [`http-python3.12-FastAPI-0.121.3`](https://github.com/paun-cristian/example
 Run the command below to deploy the app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -M 512 -p 443:8080 .
+kraft cloud deploy -p 443:8080 -M 512 .
 ```
 
 Differences from the FastAPI app are also the steps required to create an `pip`-based app:

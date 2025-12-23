@@ -5,8 +5,8 @@
 To run PetClinic on Unikraft Cloud, first [install the `kraft` CLI tool](https://unikraft.org/docs/cli).
 Then clone this examples repository and `cd` into this directory, and invoke:
 
-```console
-kraft cloud deploy --metro fra -M 1024 -p 443:8080 .
+```bash
+kraft cloud deploy --metro fra -p 443:8080 -M 1Gi .
 ```
 
 After deploying, point your browser to the provided URL.

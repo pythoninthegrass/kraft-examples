@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-traefik-staging.yaml'
     - 'traefik/**'
     - '!traefik/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-traefik-staging.yaml'
     - 'traefik/**'
@@ -51,11 +51,11 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 1024 \
             --name traefik-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/base-compat:latest \
             --subdomain traefik-${GITHUB_RUN_ID} \
             -p 443:80/tls+http -p 8080:8080/tls \
+            -M 1Gi \
             .;
 
           # wait for the instance to start

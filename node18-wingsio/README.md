@@ -5,8 +5,8 @@
 To run Node.js on Unikraft Cloud, first [install the `kraft` CLI tool](https://unikraft.org/docs/cli).
 Then clone this examples repository and `cd` into this directory, and invoke:
 
-```console
-kraft cloud deploy --metro fra -p 443:3000 -M 1024 .
+```bash
+kraft cloud deploy --metro fra -p 443:3000 -M 1Gi .
 ```
 
 The command will deploy an `wings.io` alternative called `https://github.com/Blendlight/wings.io-clone-io`.

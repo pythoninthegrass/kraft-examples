@@ -33,12 +33,12 @@ kraft cloud deploy \
     --scale-to-zero-stateful \
     --scale-to-zero-cooldown 3s \
     --name vsftpd \
-    -M 1024Mi \
     -p 20:20/tls \
     -p 21:21/tls \
     -p 222:22/tls \
     -p 990:990/tls \
     -p 10100:10100/tls \
+    -M 1Gi \
     -v "vsftpd-workspace":/root \
     .
 ```

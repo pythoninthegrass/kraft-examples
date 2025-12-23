@@ -5,8 +5,8 @@
 To run Allkaraoke on Unikraft Cloud, first [install the `kraft` CLI tool](https://unikraft.org/docs/cli).
 Then clone this examples repository and `cd` into this directory, and invoke:
 
-```console
-kraft cloud deploy -M 2Gi -p 443:8080 .
+```bash
+kraft cloud deploy -p 443:8080 -M 2Gi .
 ```
 
 The command will build the files in the current directory.

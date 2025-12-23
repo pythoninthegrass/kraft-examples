@@ -51,11 +51,11 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 256 \
             --name http-rust181-rocket05-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/base-compat:latest \
             --subdomain http-rust181-rocket05-${GITHUB_RUN_ID} \
             -p 443:8080 \
+            -M 256 \
             .;
 
           # wait for the instance to start

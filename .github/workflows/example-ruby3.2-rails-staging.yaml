@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-ruby3.2-rails-staging.yaml'
     - 'ruby3.2-rails/**'
     - '!ruby3.2-rails/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-ruby3.2-rails-staging.yaml'
     - 'ruby3.2-rails/**'
@@ -51,13 +51,13 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 1024 \
             -e GEM_HOME=/usr/local/bundle \
             -e BUNDLE_APP_CONFIG=/usr/local/bundle \
             --name ruby32-rails-staging-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/base-compat:latest \
             --subdomain ruby32-rails-staging-${GITHUB_RUN_ID} \
             -p 443:3000 \
+            -M 1Gi \
             .;
 
           # wait for the instance to start

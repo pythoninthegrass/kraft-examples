@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [mariaciobanoiu8/dragonflydb]
+    branches: [ mariaciobanoiu8/dragonflydb ]
     paths:
     - '.github/workflows/example-dragonflydb-stable.yaml'
     - 'dragonflydb/**'
     - '!dragonflydb/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-dragonflydb-stable.yaml'
     - 'dragonflydb/**'
@@ -51,11 +51,11 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 512 \
             --name dragonflydb-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/base-compat:latest \
             --subdomain dragonflydb-${GITHUB_RUN_ID} \
             -p 443:6379 \
+            -M 512 \
             .;
 
           # wait for the instance to start

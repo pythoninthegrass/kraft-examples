@@ -25,7 +25,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -M 1024 -p 443:80/tls+http -p 8080:8080/tls .
+kraft cloud deploy -p 443:80/tls+http -p 8080:8080/tls -M 1Gi .
 ```
 
 The output shows the instance address and other details:

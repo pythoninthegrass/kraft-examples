@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-lua5.1-staging.yaml'
     - 'http-lua5.1/**'
     - '!http-lua5.1/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-lua5.1-staging.yaml'
     - 'http-lua5.1/**'
@@ -51,11 +51,11 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 256 \
             --name http-lua51-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/base-compat:latest \
             --subdomain http-lua51-${GITHUB_RUN_ID} \
             -p 443:8080 \
+            -M 256 \
             .;
 
           # wait for the instance to start
