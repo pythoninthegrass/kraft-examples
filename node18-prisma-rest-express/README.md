@@ -1,8 +1,8 @@
 # Prisma
 
 This app comes from [Prisma's REST API Example](https://github.com/prisma/prisma-examples/tree/latest/javascript/rest-express) and shows how to create a **REST API** using [Express](https://expressjs.com/) and [Prisma Client](https://www.prisma.io/docs/concepts/components/prisma-client) and deploy it onto Unikraft Cloud.
-It uses a SQLite database file with some initial dummy data which you can find at [`./prisma/store.db`](./prisma/store.db).
- To run it, follow these steps:
+It uses a SQLite database file with some initial [migration data](./prisma/migrations/20240208151224_init/).
+To run it, follow these steps:
 
 1. Install the [`kraft` CLI tool](https://unikraft.org/docs/cli/install) and a container runtime engine, for example [Docker](https://docs.docker.com/engine/install/).
 
