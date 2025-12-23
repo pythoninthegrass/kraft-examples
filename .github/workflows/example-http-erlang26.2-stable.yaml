@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [mariaciobanoiu8/http-erlang26.2]
+    branches: [ mariaciobanoiu8/http-erlang26.2 ]
     paths:
     - '.github/workflows/example-http-erlang26.2-stable.yaml'
     - 'http-erlang26.2/**'
     - '!http-erlang26.2/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-erlang26.2-stable.yaml'
     - 'http-erlang26.2/**'
@@ -51,11 +51,11 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 512 \
             --name http-erlang26.2-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-testing/base-compat:latest \
             --subdomain http-erlang26.2-${GITHUB_RUN_ID} \
             -p 443:8080 \
+            -M 512 \
             .;
 
           # wait for the instance to start

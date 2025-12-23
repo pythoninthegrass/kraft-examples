@@ -3,14 +3,14 @@ name: examples/http-python3.12-FastAPI-0.121.3 (staging)
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-python3.12-FastAPI-0.121.3-staging.yaml'
     - 'http-python3.12-FastAPI-0.121.3/**'
     - '!http-python3.12-FastAPI-0.121.3/README.md'
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-python3.12-FastAPI-0.121.3-staging.yaml'
     - 'http-python3.12-FastAPI-0.121.3/**'
@@ -43,11 +43,11 @@ jobs:
           cd http-python3.12-FastAPI-0.121.3;
           kraft cloud deploy \
             --no-start \
-            --memory 512 \
             --name fastapi-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/base-compat:latest \
             --subdomain fastapi-${GITHUB_RUN_ID} \
             -p 443:8080 \
+            -M 512 \
             .;
 
     - name: Start & Test

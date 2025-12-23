@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [mariaciobanoiu8/http-java17]
+    branches: [ mariaciobanoiu8/http-java17 ]
     paths:
     - '.github/workflows/example-http-java17-stable.yaml'
     - 'http-java17/**'
     - '!http-java17/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-java17-stable.yaml'
     - 'http-java17/**'
@@ -51,11 +51,11 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 1024 \
             --name http-java17-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-testing/base-compat:latest \
             --subdomain http-java17-${GITHUB_RUN_ID} \
             -p 443:8080 \
+            -M 1Gi \
             .;
 
           # wait for the instance to start

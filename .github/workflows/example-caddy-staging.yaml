@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-caddy-staging.yaml'
     - 'caddy/**'
     - '!caddy/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-caddy-staging.yaml'
     - 'caddy/**'
@@ -51,11 +51,11 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 256 \
             --name caddy-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/base-compat:latest \
             --subdomain caddy-${GITHUB_RUN_ID} \
             -p 443:2015 \
+            -M 256 \
             .;
 
           # wait for the instance to start

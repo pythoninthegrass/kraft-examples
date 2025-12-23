@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-python-playwright-chromium-staging.yaml'
     - 'python-playwright-chromium/**'
     - '!python-playwright-chromium/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-python-playwright-chromium-staging.yaml'
     - 'python-playwright-chromium/**'
@@ -54,11 +54,11 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 4096 \
             --name python-playwright-chromium-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/base-compat:latest \
             --subdomain python-playwright-chromium-${GITHUB_RUN_ID} \
             -p 443:8080 \
+            -M 4Gi \
             .;
 
           # wait for the instance to start

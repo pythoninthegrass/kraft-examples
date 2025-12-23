@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-perl5.42-stable.yaml'
     - 'http-perl5.42/**'
     - '!http-perl5.42/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-perl5.42-stable.yaml'
     - 'http-perl5.42/**'
@@ -53,11 +53,11 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 512 \
             --name http-perl542-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-testing/base-compat:latest \
             --subdomain http-perl542-${GITHUB_RUN_ID} \
             -p 443:8080 \
+            -M 512 \
             .;
 
           # wait for the instance to start

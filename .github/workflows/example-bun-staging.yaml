@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [bun]
+    branches: [ bun ]
     paths:
     - '.github/workflows/example-bun-staging.yaml'
     - 'bun/**'
     - '!bun/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-bun-staging.yaml'
     - 'bun/**'
@@ -51,11 +51,11 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 512 \
             --name bun-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/base-compat:latest \
             --subdomain bun-${GITHUB_RUN_ID} \
             -p 443:3000 \
+            -M 512 \
             .;
 
           # wait for the instance to start

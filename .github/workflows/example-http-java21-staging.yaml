@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-java21-staging.yaml'
     - 'http-java21/**'
     - '!http-java21/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-java21-staging.yaml'
     - 'http-java21/**'
@@ -50,10 +50,10 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 1024 \
             --name http-java21-${GITHUB_RUN_ID} \
             --subdomain http-java21-${GITHUB_RUN_ID} \
             -p 443:8080 \
+            -M 1Gi \
             .;
 
           kraft cloud vm start -w 5s http-java21-${GITHUB_RUN_ID};

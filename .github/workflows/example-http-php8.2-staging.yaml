@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-php8.2-staging.yaml'
     - 'http-php8.2/**'
     - '!http-php8.2/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-php8.2-staging.yaml'
     - 'http-php8.2/**'
@@ -51,11 +51,11 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 512 \
             --name http-php82-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/base-compat:latest \
             --subdomain http-php82-${GITHUB_RUN_ID} \
             -p 443:8080 \
+            -M 512 \
             .;
 
           # wait for the instance to start

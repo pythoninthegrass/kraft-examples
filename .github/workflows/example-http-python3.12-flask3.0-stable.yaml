@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-python3.12-flask3.0-stable.yaml'
     - 'http-python3.12-flask3.0/**'
     - '!http-python3.12-flask3.0/README.md'
 
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
     paths:
     - '.github/workflows/example-http-python3.12-flask3.0-stable.yaml'
     - 'http-python3.12-flask3.0/**'
@@ -51,11 +51,11 @@ jobs:
 
           kraft cloud deploy \
             --no-start \
-            --memory 512 \
             --name http-python312-flask30-stable-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-testing/base-compat:latest \
             --subdomain http-python312-flask30-stable-${GITHUB_RUN_ID} \
             -p 443:8080 \
+            -M 512 \
             .;
 
           # wait for the instance to start
