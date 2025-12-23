@@ -29,7 +29,7 @@ When done, invoke the following command to deploy this app on Unikraft Cloud:
 kraft cloud compose up
 ```
 
-The output shows the [Compose](/docs/guides/features/compose) output:
+The output shows the [Compose](https://unikraft.com/docs/cli/compose/up) output:
 
 ```text
  i  building service=tyk
@@ -89,7 +89,7 @@ Update the contents of the `rootfs/etc/tyk.conf` file for a different configurat
 
 You can also update the `Dockerfile` in order to extend the Tyk filesystem with extra data files or configuration files.
 
-The `compose.yaml` file can be update to assign different names, ports, network names or other [Compose](/docs/guides/features/compose)-specific configurations.
+The `compose.yaml` file can be update to assign different names, ports, network names or other [Compose](https://unikraft.com/docs/cli/compose)-specific configurations.
 
 ## Learn more
 

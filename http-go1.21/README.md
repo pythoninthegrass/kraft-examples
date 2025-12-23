@@ -12,7 +12,7 @@ git clone https://github.com/unikraft-cloud/examples
 cd examples/http-go1.21/
 ```
 
-Make sure to log into Unikraft Cloud by setting your token and a [metro](/docs/metros#available) close to you.
+Make sure to log into Unikraft Cloud by setting your token and a [metro](https://unikraft.com/docs/metros#available) close to you.
 This guide uses `fra` (Frankfurt, 🇩🇪):
 
 ```bash
