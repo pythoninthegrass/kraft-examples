@@ -1,4 +1,4 @@
-name: examples/http-lua5.1 (staging)
+name: examples/httpserver-php8.2 (staging)
 
 on:
   workflow_dispatch:
@@ -6,20 +6,20 @@ on:
   push:
     branches: [ main ]
     paths:
-    - '.github/workflows/example-http-lua5.1-staging.yaml'
-    - 'http-lua5.1/**'
-    - '!http-lua5.1/README.md'
+    - '.github/workflows/example-httpserver-php8.2-staging.yaml'
+    - 'httpserver-php8.2/**'
+    - '!httpserver-php8.2/README.md'
 
   pull_request:
     types: [ opened, synchronize, reopened ]
     branches: [ main ]
     paths:
-    - '.github/workflows/example-http-lua5.1-staging.yaml'
-    - 'http-lua5.1/**'
-    - '!http-lua5.1/README.md'
+    - '.github/workflows/example-httpserver-php8.2-staging.yaml'
+    - 'httpserver-php8.2/**'
+    - '!httpserver-php8.2/README.md'
 
   schedule:
-  - cron: '15 15 * * 1-5'
+  - cron: '30 15 * * 1-5'
 
 # Automatically cancel in-progress actions on the same branch
 concurrency:
@@ -47,22 +47,22 @@ jobs:
         run: |
           set -xe;
 
-          cd http-lua5.1;
+          cd httpserver-php8.2;
 
           kraft cloud deploy \
             --no-start \
-            --name http-lua51-${GITHUB_RUN_ID} \
+            --name httpserver-php82-${GITHUB_RUN_ID} \
             --runtime index.unikraft.io/official-staging/base-compat:latest \
-            --subdomain http-lua51-${GITHUB_RUN_ID} \
+            --subdomain httpserver-php82-${GITHUB_RUN_ID} \
             -p 443:8080 \
-            -M 256 \
+            -M 512 \
             .;
 
           # wait for the instance to start
-          kraft cloud vm start -w 5s http-lua51-${GITHUB_RUN_ID};
+          kraft cloud vm start -w 5s httpserver-php82-${GITHUB_RUN_ID};
           sleep 5;
 
-          curl -Lv --fail-with-body --max-time 10 https://http-lua51-${GITHUB_RUN_ID}.${{ vars.UKC_METRO_STAGING }}.unikraft.app
+          curl -Lv --fail-with-body --max-time 10 https://httpserver-php82-${GITHUB_RUN_ID}.${{ vars.UKC_METRO_STAGING }}.unikraft.app
 
     - name: Cleanup
       uses: unikraft/kraftkit@staging
@@ -71,7 +71,7 @@ jobs:
         run: |
           set -xe;
 
-          kraft cloud vm stop http-lua51-${GITHUB_RUN_ID} || true;
-          kraft cloud vm logs http-lua51-${GITHUB_RUN_ID} || true;
-          kraft cloud vm rm http-lua51-${GITHUB_RUN_ID} || true;
-          kraft cloud img rm index.unikraft.io/test/http-lua51-${GITHUB_RUN_ID} || true;
+          kraft cloud vm stop httpserver-php82-${GITHUB_RUN_ID} || true;
+          kraft cloud vm logs httpserver-php82-${GITHUB_RUN_ID} || true;
+          kraft cloud vm rm httpserver-php82-${GITHUB_RUN_ID} || true;
+          kraft cloud img rm index.unikraft.io/test/httpserver-php82-${GITHUB_RUN_ID} || true;
