@@ -36,7 +36,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:8080 -M 2048 .
+kraft cloud deploy -p 443:8080 -M 2Gi .
 ```
 
 The output shows your instance details:
@@ -104,7 +104,7 @@ kraft cloud volume create --name mcp-arxiv-data --size 500
 Then start the MCP server instance and mount that volume (while specifying the storage path):
 
 ```console
-kraft cloud deploy -v mcp-arxiv-data:/volume -p 443:8080 -M 2048 . -- --storage-path /volume
+kraft cloud deploy -v mcp-arxiv-data:/volume -p 443:8080 -M 2Gi . -- --storage-path /volume
 ```
 
 ## Available tools

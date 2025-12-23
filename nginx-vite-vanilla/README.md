@@ -26,7 +26,7 @@ necessary for deploying to Unikraft Cloud.
 To deploy, `cd` into this directory and run:
 
 ```bash
-kraft cloud deploy -p 443:8080 .
+kraft cloud deploy -p 443:8080 -M 256 .
 ```
 
 After deploying, you can query the service using the provided URL.

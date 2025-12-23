@@ -8,7 +8,7 @@ Then clone this examples repository and `cd` into this directory, and invoke:
 
 ```console
 kraft cloud volume create --name mariadb-store --size 512
-kraft cloud deploy -M 1024 --env MARIADB_ROOT_PASSWORD="unikraft" --volume mariadb-store:/var/lib .
+kraft cloud deploy -M 1Gi --env MARIADB_ROOT_PASSWORD="unikraft" --volume mariadb-store:/var/lib .
 ```
 
 Get the results of the deployment by first forwarding the port:

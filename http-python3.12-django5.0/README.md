@@ -24,7 +24,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:80 -M 1024 .
+kraft cloud deploy -p 443:80 -M 1Gi .
 ```
 
 The output shows the instance address and other details:
@@ -137,7 +137,7 @@ The [`http-python3.12-flask3.0`](https://github.com/unikraft-cloud/examples/tree
 Run the command below to deploy the app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -p 443:80 -M 1024 .
+kraft cloud deploy -p 443:80 -M 1Gi .
 ```
 
 Differences from the Django app are also the steps required to create an `pip`-based app:

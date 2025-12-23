@@ -5,8 +5,8 @@ This is a simple HTTP server written in the [Java](https://www.java.com/en/) pro
 To run this example on Unikraft Cloud, first [install the `kraft` CLI tool](https://unikraft.org/docs/cli).
 Then clone this examples repository and `cd` into this directory, and invoke:
 
-```console
-kraft cloud deploy --metro fra -p 443:8080 -M 1024 .
+```bash
+kraft cloud deploy --metro fra -p 443:8080 -M 1Gi .
 ```
 
 The command will build and deploy the `SimpleHTTPServer.java` source code file.

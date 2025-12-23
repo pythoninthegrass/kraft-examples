@@ -32,8 +32,8 @@ kraft cloud deploy \
     --scale-to-zero on \
     --scale-to-zero-stateful \
     --scale-to-zero-cooldown 4s \
-    -M 4096 \
     -p 443:6080 \
+    -M 4Gi \
     -n vnc-browser \
     .
 ```

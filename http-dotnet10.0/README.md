@@ -4,7 +4,7 @@ To run this example, first [install the `kraft` CLI tool](https://unikraft.org/d
 
 To deploy this application on Unikraft Cloud, invoke:
 
-```console
+```bash
 kraft cloud deploy -p 443:8080 -M 512 .
 ```
 

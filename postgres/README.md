@@ -25,7 +25,7 @@ export UKC_METRO=fra
 When done, invoke the following command to deploy this app on Unikraft Cloud:
 
 ```bash
-kraft cloud deploy -e POSTGRES_PASSWORD=unikraft -p 5432:5432/tls -M 1024 .
+kraft cloud deploy -e POSTGRES_PASSWORD=unikraft -p 5432:5432/tls -M 1Gi .
 ```
 
 The output shows the instance address and other details:
@@ -111,8 +111,8 @@ kraft cloud volume create --name postgres --size 200
 
 Then start the PostgreSQL instance and mount that volume:
 
-```console
-kraft cloud deploy -e POSTGRES_PASSWORD=unikraft -e PGDATA=/volume/postgres -v postgres:/volume -p 5432:5432/tls -M 1024 .
+```bash
+kraft cloud deploy -p 5432:5432/tls -M 1Gi -e POSTGRES_PASSWORD=unikraft -e PGDATA=/volume/postgres -v postgres:/volume .
 ```
 
 ## Customize your deployment
